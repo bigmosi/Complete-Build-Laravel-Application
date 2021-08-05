@@ -29,7 +29,7 @@ use App\Jobs\Deploy;
 |
 */
 Route::post('newsletter', NewsletterController::class);
-//Route::get('/', [PostController::class, 'index'])->name('home');
+Route::get('/', [PostController::class, 'index'])->name('home');
 
 Route::get('posts/{post:slug}', [PostController::class, 'show']);
 

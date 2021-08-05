@@ -28,17 +28,6 @@ use App\Jobs\Deploy;
 | contains the "web" middleware group. Now create something great!
 |
 */
-Route::get('/', function(){
-        $batch=[
-            new \App\Jobs\PullRepo('laracasts/project1'),
-            new \App\Jobs\PullRepo('laracasts/project2'),
-            new \App\Jobs\PullRepo('laracasts/project3'),
-        ];
-
-        \Illuminate\Support\Facades\Bus::batch($batch)->allowFailures()->dispatch();
-
-    return ('home');
-});
 Route::post('newsletter', NewsletterController::class);
 //Route::get('/', [PostController::class, 'index'])->name('home');
 
